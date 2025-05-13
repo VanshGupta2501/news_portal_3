@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+@theme{
+    --breakpoint-*:initial;
+    --breakpoint-xextralarge: 2560px;
+    --breakpoint-extralarge: 1800px;
+    --breakpoint-large: 1322px;
+    --breakpoint-medium: 1099px;
+    --breakpoint-small: 918px;
+    --breakpoint-xsmall: 801px;
+    --breakpoint-xxsmall: 700px;
+    --breakpoint-xxxsmall: 660px;
+    --breakpoint-xxxxsmall: 640px;
+    --breakpoint-extrasmall: 500px;
+    --breakpoint-lextrasmall: 478px;
+    --breakpoint-xextrasmall: 420px;
+    --breakpoint-xxextrasmall:350px;
+}
