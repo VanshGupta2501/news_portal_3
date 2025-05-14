@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import data from '/src/constants/context/hn.json';
 
 const FourCardSections = () => {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    fetch("/src/constants/context/hn.json")
-      .then((res) => res.json())
-      .then((data) => setCards(data.fourcard))
-      .catch((err) => console.error('Error loading data:', err));
-  }, []);
+  const cards = data.fourcard || [];
 
   return (
     <div className="grid gap-4
@@ -29,11 +23,12 @@ const FourCardSections = () => {
       {cards.slice(0, 4).map((item, index) => (
         <div
           key={index}
-          className="bg-white  rounded-3xl p-4 flex flex-col gap-2 w-full max-w-[350px] mx-auto h-[520px]"
+          className="bg-white rounded-3xl p-4 flex flex-col gap-2 w-full max-w-[350px] mx-auto h-[520px]"
         >
           <img
             className="rounded-2xl h-[250px] object-cover w-full"
             src={item.img}
+            alt={item.title}
           />
           <div className="flex justify-between text-sm text-gray-600">
             <p className="text-red-400 font-medium">{item.title}</p>
